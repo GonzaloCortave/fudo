@@ -6,7 +6,7 @@
   font-family: Raleway;
   font-weight: 400;
   font-display: swap;
-src:
+  src:
     url("/fonts/Raleway-Regular.woff2") format("woff2"),
     url("/fonts/Raleway-Regular.woff") format("woff"),
     url("/fonts/Raleway-Regular.ttf") format("truetype");
@@ -33,19 +33,20 @@ src:
 }
 
 * {
-    font-feature-settings:
-        "pnum" on,
-        "lnum" on;
+  font-feature-settings:
+    "pnum" on,
+    "lnum" on;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: Raleway, ui-sans-serif, system-ui, sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-      "Noto Color Emoji";
-    font-weight: 500;
-    color: rgb(var(--gray-1000));
-    color-scheme: dark;
-    background-color: Canvas;
+  font-family: Raleway, ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  color: rgb(var(--gray-1000));
+
+  /* color-scheme: dark; */
+  background-color: Canvas;
 }
 
 @layer base {
@@ -78,7 +79,7 @@ html {
     --orange-100: 255, 243, 240; /* rgb(255, 243, 240)  */
     --orange-200: 255, 231, 223; /* rgb(255, 231, 223)  */
     --orange-300: 255, 216, 204; /* rgb(255, 216, 204)  */
-    --orange-400: 255, 201, 184 ; /* rgb(255, 201, 184 )  */
+    --orange-400: 255, 201, 184; /* rgb(255, 201, 184 )  */
     --orange-500: 255, 185, 163; /* rgb(255, 185, 163)  */
     --orange-600: 255, 144, 108; /* rgb(255, 144, 108)  */
     --orange-700: 255, 112, 66; /* rgb(255, 112, 66 )  */
@@ -123,4 +124,13 @@ html {
     --red-900: 177, 11, 11; /* rgb(177, 11, 11 )  */
     --red-1000: 88, 13, 13; /* rgb(88, 13, 13 )  */
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
 }

@@ -9,6 +9,12 @@ import {
 
 type Methods = "GET" | "POST" | "DELETE" | "PUT" | "PATCH";
 type QueryString = Record<string, number | string | boolean | undefined>;
+type Headers = Record<string, string>;
+type Options = {
+    method: Methods;
+    body?: string;
+    headers?: Headers;
+};
 
 type ApiService = {
     hostname: string;
@@ -16,7 +22,7 @@ type ApiService = {
     method?: Methods;
     query?: QueryString;
     body?: Record<string, unknown>;
-    headers?: Record<string, unknown>;
+    headers?: Headers;
 };
 
 const composeQueryParams = (query?: QueryString) => {
@@ -83,13 +89,11 @@ export async function apiService<T>({
 }: ApiService): Promise<T> {
     const qString = composeQueryParams(query);
 
-    const path = `${hostname}/${pathname}${qString}`;
-
-    const options = {
+    const path = `${hostname}${pathname ? "/" + pathname : ""}${qString}`;
+    const options: Options = {
         method,
         body: body ? JSON.stringify(body) : undefined,
         headers: {
-            "Content-Type": "application/json",
             ...headers,
         },
     };

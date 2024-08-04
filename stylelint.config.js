@@ -1,16 +1,17 @@
 export default {
-    extends: [
-        "stylelint-config-standard",
-        "stylelint-config-tailwindcss",
-        "stylelint-config-standard-scss",
+  extends: [
+    "stylelint-config-standard",
+    "stylelint-config-tailwindcss",
+    "stylelint-config-standard-scss",
+  ],
+  rules: {
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        ignoreAtRules: ["tailwind"],
+      },
     ],
-    rules: {
-        "scss/at-rule-no-unknown": [
-            true,
-            {
-                ignoreAtRules: ["tailwind"],
-            },
-        ],
-        "declaration-no-important": true,
-    },
+    "declaration-no-important": true,
+    "selector-class-pattern": null,
+  },
 };
