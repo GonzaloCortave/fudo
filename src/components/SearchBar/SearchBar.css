@@ -1,0 +1,16 @@
+.SearchBar {
+  border: 1px solid rgb(var(--gray-500));
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SearchBar input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(var(--gray-1000));
+}
