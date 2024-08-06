@@ -8,9 +8,9 @@ type NewsListProps = {
 };
 
 export const NewsList = ({ news }: NewsListProps) => (
-    <main className="NewsList">
+    <div className="NewsList">
         {news.map((article, index) => (
-            <Article key={article.title + index} {...article} />
+            <Article key={article.title + index} article={article} />
         ))}
-    </main>
+    </div>
 );

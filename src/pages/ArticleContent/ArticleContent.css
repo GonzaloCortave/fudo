@@ -1,0 +1,25 @@
+.ArticleContent {
+  padding: 60px 15%;
+  display: grid;
+  gap: 20px;
+  background-color: rgb(var(--orange-100));
+  margin-top: 74px;
+}
+
+.ArticleContent img {
+  justify-self: center;
+  border-radius: 12px;
+  max-height: 300px;
+}
+
+.ArticleContent--info {
+  display: grid;
+  gap: 10px;
+  color: rgb(var(--gray-700));
+}
+
+@media screen and (width <= 640px) {
+  .ArticleContent {
+    padding: 40px 20px;
+  }
+}
