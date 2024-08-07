@@ -19,7 +19,7 @@ const ArticleContent = () => {
 
     return (
         <div className="ArticleContent">
-            <button onClick={handleGoBack}>
+            <button className="ArticleContent__arrow" onClick={handleGoBack}>
                 <IoArrowBackOutline />
             </button>
             {urlToImage && <img alt={title} src={urlToImage} />}

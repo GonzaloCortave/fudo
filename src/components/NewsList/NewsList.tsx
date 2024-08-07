@@ -9,8 +9,10 @@ type NewsListProps = {
 
 export const NewsList = ({ news }: NewsListProps) => (
     <div className="NewsList">
-        {news.map((article, index) => (
-            <Article key={article.title + index} article={article} />
-        ))}
+        {news.length === 0 ? (
+            <p>No news available</p>
+        ) : (
+            news.map((article, index) => <Article key={article.title + index} article={article} />)
+        )}
     </div>
 );

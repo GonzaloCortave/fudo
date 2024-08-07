@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 220px;
 }
 
 .SearchBar input {
@@ -14,10 +15,17 @@
   font-weight: 500;
   color: rgb(var(--gray-1000));
   background-color: transparent;
+  width: 100%;
 }
 
 .SearchBar--offline {
   background-color: rgb(var(--gray-100));
   border-color: rgb(var(--gray-200));
   color: rgb(var(--gray-500));
+}
+
+@media screen and (width <= 640px) {
+  .SearchBar {
+    width: 140px;
+  }
 }

@@ -4,6 +4,7 @@ import { AppProviders } from "@/appProviders";
 import Home from "@/pages/Home/Home";
 import Header from "@/components/Header/Header";
 import ArticleContent from "@/pages/ArticleContent/ArticleContent";
+import Footer from "@/components/Footer/Footer";
 
 export const AppRouter = () => {
     return (
@@ -13,7 +14,7 @@ export const AppRouter = () => {
                 <Route element={<Home />} path="/" />
                 <Route element={<ArticleContent />} path="/article-content" />
             </Routes>
-            <footer>this is the footer</footer>
+            <Footer />
         </AppProviders>
     );
 };

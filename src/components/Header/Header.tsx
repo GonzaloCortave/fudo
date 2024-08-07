@@ -5,11 +5,14 @@ import { useOffline } from "@/appProviders/OfflineModeProvider/OfflineModeProvid
 import "./Header.css";
 import cx from "classnames";
 
+import Logo from "../Logo/Logo";
+
 const Header = () => {
     const { isOffline, setIsOffline } = useOffline();
 
     return (
         <header className="Header">
+            <Logo />
             <SearchBar />
             <button
                 className={cx("Header__offlineButton", {

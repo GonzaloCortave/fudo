@@ -1,5 +1,6 @@
 .NewsList {
-  justify-items: center;
-  display: grid;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }

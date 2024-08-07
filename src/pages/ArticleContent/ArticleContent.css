@@ -6,6 +6,10 @@
   margin-top: 74px;
 }
 
+.ArticleContent .ArticleContent__arrow {
+  color: rgb(var(--orange-800));
+}
+
 .ArticleContent img {
   justify-self: center;
   border-radius: 12px;

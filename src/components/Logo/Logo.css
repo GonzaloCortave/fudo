@@ -1,0 +1,7 @@
+.Logo {
+  width: 80px;
+}
+
+.Logo a {
+  color: rgb(var(--gray-1000));
+}
