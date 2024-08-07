@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 
 import { NewsProvider } from "./NewsProvider/NewsProvider";
+import { OfflineProvider } from "./OfflineModeProvider/OfflineModeProvider";
 
 import { ModalProvider } from "@/appProviders/ModalManagerProvider/ModalManagerProvider";
 import WindowSizeProvider from "@/appProviders/WindowSizeProvider";
@@ -27,7 +28,9 @@ export const AppProviders = ({ children }: AppProvidersProps) => {
                         initialIsOpen={import.meta.env.VITE_NODE_ENV === "development"}
                     />
                     <ModalProvider>
-                        <NewsProvider>{children}</NewsProvider>
+                        <OfflineProvider>
+                            <NewsProvider>{children}</NewsProvider>
+                        </OfflineProvider>
                     </ModalProvider>
                 </WindowSizeProvider>
             </QueryClientProvider>

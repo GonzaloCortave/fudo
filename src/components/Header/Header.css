@@ -7,4 +7,13 @@
   width: 100%;
   background-color: white;
   top: 0;
+  gap: 20px;
+}
+
+.Header .Header__offlineButton {
+  color: rgb(var(--gray-500));
+}
+
+.Header .Header__offlineButton.Header__offlineButton--offline {
+  color: rgb(var(--gray-900));
 }
