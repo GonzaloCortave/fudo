@@ -3,17 +3,20 @@ const urlsToCache = [
   "/",
   "/index.html",
   "/vite.svg",
-  "/static/js/bundle.js",
-  "/static/js/main.chunk.js",
-  "/static/js/0.chunk.js",
+  "/imgs/logo.svg",
   "/article-content",
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
-    }),
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => {
+        return cache.addAll(urlsToCache);
+      })
+      .catch((err) => {
+        console.log(err, "aca el error");
+      }),
   );
 });
 
@@ -33,7 +36,8 @@ self.addEventListener("fetch", (event) => {
             return response;
           });
         })
-        .catch(() => {
+        .catch((e) => {
+          console.log("catched error, ", e, event.request);
           return caches.match(event.request);
         }),
     );

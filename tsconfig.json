@@ -14,7 +14,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-        "@/*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
 
     /* Linting */
@@ -23,6 +23,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "i18n.config.ts"],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

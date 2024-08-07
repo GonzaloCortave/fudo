@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-import { Article } from "../../types/news";
+import { Article as ArticleType } from "../../types/news";
 
 import "./Article.css";
 import { formatDate } from "@/utils/date";
 
-type ArticleProps = { article: Article };
+type ArticleProps = { article: ArticleType };
 
 const Article = ({ article }: ArticleProps) => {
     const { title, description, author, urlToImage, publishedAt } = article;

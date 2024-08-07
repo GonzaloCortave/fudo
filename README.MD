@@ -4,30 +4,33 @@
 
 ### Pre-requisitos 📋
 
-* _Node.js > 16.9.0._</br>
-* _Ejecutar :_
+- _Node.js > 16.9.0._</br>
+- _Ejecutar :_
 
 ```bash
 corepack enable
 ```
+
 _Esto habilita el gestor de paquetes pnpm._
 
 ### Instalación 🔧
 
-* _Crear el archivo .npmrc y ejecutar:_
+- _Crear el archivo .npmrc y ejecutar:_
 
 ```bash
 pnpm install
 ```
-* _Ahora tenemos los siguientes script para crear un archivo `.env` según ambiente:_
+
+- _Ahora tenemos los siguientes script para crear un archivo `.env` según ambiente:_
 
 ```bash
     pnpm dev:run-dev-ar
     pnpm dev:run-dev-br
     pnpm dev:run-prd-ar
-    pnpm dev:run-prd-br 
+    pnpm dev:run-prd-br
 ```
-* Si ya tenemos el `.env` solo ejecutamos esto
+
+- Si ya tenemos el `.env` solo ejecutamos esto
 
 ```bash
     pnpm vite
@@ -76,6 +79,8 @@ src/
 └── main.tsx            # Archivo de inicialización principal de la aplicación
 ```
 
+## Docker execution
 
-
-
+1. Run: docker build --no-cache -t fudo-app .
+2. Run: docker run -p 8080:80 fudo-app
+3. Open url: http://localhost:8080
