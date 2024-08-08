@@ -9,17 +9,18 @@
   top: 0;
   gap: 20px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .Header .Header__logo {
   width: 80px;
 }
 
-.Header .Header__offlineButton {
+.Header .Header__offlineText {
   color: rgb(var(--gray-500));
 }
 
-.Header .Header__offlineButton.Header__offlineButton--offline {
+.Header .Header__offlineText.Header__offlineText--offline {
   color: rgb(var(--orange-800));
 }
 

@@ -18,15 +18,8 @@ export default defineConfig({
     },
     plugins: [react()],
     build: {
-        rollupOptions: {
-            output: {
-                manualChunks(id: string) {
-                    if (id.includes("react-router-dom") || id.includes("react-router")) {
-                        return "@react-router";
-                    }
-                },
-            },
-        },
+        manifest: true,
+        outDir: "dist",
     },
     test: {
         globals: true,

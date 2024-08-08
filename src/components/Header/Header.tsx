@@ -8,20 +8,19 @@ import cx from "classnames";
 import Logo from "../Logo/Logo";
 
 const Header = () => {
-    const { isOffline, setIsOffline } = useOffline();
+    const { isOffline } = useOffline();
 
     return (
         <header className="Header">
             <Logo />
             <SearchBar />
-            <button
-                className={cx("Header__offlineButton", {
-                    "Header__offlineButton--offline": isOffline,
+            <p
+                className={cx("Header__offlineText", {
+                    "Header__offlineText--offline": isOffline,
                 })}
-                onClick={() => setIsOffline(!isOffline)}
             >
-                {isOffline ? "Go Online" : "Go Offline"}
-            </button>
+                {isOffline ? "Offline mode" : "Online mode"}
+            </p>
         </header>
     );
 };

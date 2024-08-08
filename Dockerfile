@@ -20,6 +20,8 @@ RUN pnpm run build
 FROM nginx:alpine AS runner
 # Copia los archivos construidos al contenedor Nginx
 COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist/.vite/manifest.json /usr/share/nginx/html
+
 # Copia el archivo de configuración de Nginx si es necesario
 COPY nginx.conf /etc/nginx/nginx.conf
 # Expone el puerto en el que Nginx está escuchando

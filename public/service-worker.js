@@ -7,17 +7,46 @@ const urlsToCache = [
   "/article-content",
 ];
 
+// const urlsToCache = [
+//   "/",
+//   "/index.html",
+//   "/vite.svg",
+//   "/static/js/bundle.js",
+//   "/static/js/main.chunk.js",
+//   "/static/js/0.chunk.js",
+//   "/article-content",
+// ];
+async function fetchManifest() {
+  try {
+    const response = await fetch("/manifest.json");
+    console.log("🚀 ~ fetchManifest ~ response:", response);
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const manifest = await response.json();
+    console.log("🚀 ~ fetchManifest ~ manifest:", manifest);
+
+    const files = Object.values(manifest).map((entry) => `/dist/${entry.file}`);
+    return files;
+  } catch (error) {
+    console.error("Failed to fetch manifest:", error);
+    return [];
+  }
+}
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches
-      .open(CACHE_NAME)
-      .then((cache) => {
-        return cache.addAll(urlsToCache);
+    fetchManifest()
+      .then(async (files) => {
+        const cache = await caches.open(CACHE_NAME);
+        return await cache.addAll([...urlsToCache, ...files]);
       })
       .catch((err) => {
-        console.log(err, "aca el error");
+        console.log(err, "Catched error");
       }),
   );
+  self.skipWaiting(); // Esto hará que el Service Worker se active inmediatamente después de la instalación
 });
 
 self.addEventListener("fetch", (event) => {
@@ -36,8 +65,7 @@ self.addEventListener("fetch", (event) => {
             return response;
           });
         })
-        .catch((e) => {
-          console.log("catched error, ", e, event.request);
+        .catch(() => {
           return caches.match(event.request);
         }),
     );
