@@ -1,19 +1,38 @@
 .ArticleContent {
   padding: 60px 15%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   background-color: rgb(var(--orange-100));
   margin-top: 74px;
+  align-items: center;
 }
 
 .ArticleContent .ArticleContent__arrow {
   color: rgb(var(--orange-800));
+  align-self: start;
+}
+
+.ArticleContent .ArticleContent__arrow svg {
+  height: 25px;
+  width: 25px;
 }
 
 .ArticleContent img {
   justify-self: center;
   border-radius: 12px;
   max-height: 300px;
+}
+
+.ArticleContent .ArticleContent--container {
+  max-width: 600px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .ArticleContent--info {
@@ -25,5 +44,11 @@
 @media screen and (width <= 640px) {
   .ArticleContent {
     padding: 40px 20px;
+  }
+}
+
+@media screen and (width <= 372px) {
+  .ArticleContent {
+    padding: 80px 0;
   }
 }

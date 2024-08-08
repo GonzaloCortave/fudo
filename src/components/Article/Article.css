@@ -8,6 +8,12 @@
   gap: 12px;
   background-color: white;
   box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.Article:hover {
+  transform: scale(1.02);
 }
 
 .Article__img {

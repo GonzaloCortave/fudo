@@ -17,7 +17,7 @@ const Article = ({ article }: ArticleProps) => {
     };
 
     return (
-        <div className="Article">
+        <div className="Article" onClick={handleArticleClick}>
             <img alt={`Image: ${title}`} className="Article__img" src={urlToImage} />
             <div className="Article__content">
                 <h2>{title}</h2>

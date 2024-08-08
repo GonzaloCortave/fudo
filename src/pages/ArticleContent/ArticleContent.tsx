@@ -22,15 +22,17 @@ const ArticleContent = () => {
             <button className="ArticleContent__arrow" onClick={handleGoBack}>
                 <IoArrowBackOutline />
             </button>
-            {urlToImage && <img alt={title} src={urlToImage} />}
-            <h1>{title}</h1>
-            <p>Description: {description}</p>
-            <p>Content: {content}</p>
-            <div className="ArticleContent--info">
-                <p>Authors: {author}</p>
-                <p>Published at: {formatDate(publishedAt)}</p>
-                <p>Source: {source.name}</p>
-                <a href={url}>Read the original article</a>
+            <div className="ArticleContent--container">
+                {urlToImage && <img alt={title} src={urlToImage} />}
+                <h1>{title}</h1>
+                <p>Description: {description}</p>
+                <p>Content: {content}</p>
+                <div className="ArticleContent--info">
+                    <p>Authors: {author}</p>
+                    <p>Published at: {formatDate(publishedAt)}</p>
+                    <p>Source: {source.name}</p>
+                    <a href={url}>Read the original article</a>
+                </div>
             </div>
         </div>
     );

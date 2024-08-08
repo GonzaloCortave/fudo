@@ -5,6 +5,15 @@ const urlsToCache = [
   "/vite.svg",
   "/imgs/logo.svg",
   "/article-content",
+  "/fonts/Raleway-Bold.ttf",
+  "/fonts/Raleway-Bold.woff",
+  "/fonts/Raleway-Bold.woff2",
+  "/fonts/Raleway-Regular.ttf",
+  "/fonts/Raleway-Regular.woff",
+  "/fonts/Raleway-Regular.woff2",
+  "/fonts/Raleway-Medium.ttf",
+  "/fonts/Raleway-Medium.woff",
+  "/fonts/Raleway-Medium.woff2",
 ];
 
 // const urlsToCache = [
@@ -27,7 +36,10 @@ async function fetchManifest() {
     const manifest = await response.json();
     console.log("🚀 ~ fetchManifest ~ manifest:", manifest);
 
-    const files = Object.values(manifest).map((entry) => `/dist/${entry.file}`);
+    const files = [
+      ...Object.values(manifest).map((entry) => `/${entry.file}`),
+      manifest["index.html"]?.css,
+    ];
     return files;
   } catch (error) {
     console.error("Failed to fetch manifest:", error);
